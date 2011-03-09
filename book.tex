@@ -53,20 +53,20 @@ In general, having a ``vocabulary" of different languages is very helpful. Think
 When we count, we count in ``base ten." Effectively this means we start at 0, then 1, 2, 3, 4, 5, 6, 7, 8, 9 -- and then ``ten". Why ten? Well, most likely because we have ten fingers. However, humans also count in base 60 - though you may not have been aware of it until now.
 
 For example, is it 11:58 AM ? That is an example of ``base 60." You start at 0, then you keep going until you reach 59. Then you go back to 0. Consider the similarities between:
-17, 18, 19, 20, 21, 22
-and
-4:57, 4:58, 4:59, 5:00, 5:01
+\\17, 18, 19, 20, 21, 22
+\\and
+\\4:57, 4:58, 4:59, 5:00, 5:01
 
 The general rule to remember is this: When one column is FULL, the next column over to the left increments by one and the column that becomes full becomes zero. For example:
-18, 19, 20 <--- the ``ones" column is now full, so it becomes zero. The column next to it (the ``tens" column) increments by one to become 2.
+\\18, 19, 20 \textless---  the ``ones" column is now full, so it becomes zero. The column next to it (the ``tens" column) increments by one to become 2.
 \subsection{How computers count}
 Remember that inside a computer everything is represented as 1s and 0s. A sequence of 1s and 0s is actually a number, the same as: 1,274 is a number. In base ten, a column is full once it reaches 9. In base 60 a column is full once it reaches 59. Well, in base 2 (binary, 1s and 0s), a column is full once it reaches ONE.
 
 So, you start counting like this: 0, 1
 
 Ok, what now? Well, like we talked about - the column is now full, so it must become zero, and the column over to the left must now become a 1. So:
-0, 1, 10
-ten? No. Two. Don't be confused. 10 all your life has meant ``ten", but I want you to think of it as meaning something different: Two columns, and a value in each one.
+\\0, 1, 10
+\\ten? No. Two. Don't be confused. 10 all your life has meant ``ten", but I want you to think of it as meaning something different: Two columns, and a value in each one.
 
 Lets talk about the number 35 (thirty-five). It really means: 3 in the tens column, and five in the ones column. Each column in base-10 as you move over to the left becomes ten times the previous. So you go: ones, tens, hundreds, thousands, etc.
 
@@ -75,23 +75,27 @@ In base 2 (binary), each column doubles from the previous, so you go: 1, 2, 4, 8
 For example, the binary number: 0100 means this: You have a 0 in the ones place, a 0 in the twos place, and a 1 in the fours place, and a 0 in the eights place. Therefore, the number is ``four".
 
 So lets go back to counting in binary:
-0, 1, 10 (because once a column is full, we go to the next column) then: 11 (three), 100 (four), 101 (five), 110 (six), 111 (seven).
+\\0, 1, 10 (because once a column is full, we go to the next column) then: 11 (three), 100 (four), 101 (five), 110 (six), 111 (seven).
+
 Now, what do we do next? What would we do if the number was nine-hundred and ninety-nine? 999 ? Watch:
-999 + 1
-1000
+\\999 + 1
+\\1000
+
 Three columns are full, we go to the next one to the left. Now binary:
-111 + 1
-1000
+\\111 + 1
+\\1000
+
 A thousand? No - eight. There is a one in the eights place, a 0 in the fours, a 0 in the twos and a 0 in the one's place.
+
 \section{Alright now I can count in binary! Other than to impress my girlfriend (or scare her away), why do I have to know this?}
 It may seem like binary is something you will never have to use in programming. The truth is, if all you planned to do was learn a language or make simple applications, this is probably true.
 
 However, the ability to really make things requires that you understand binary for many reasons, some of which I want to explore here. The first major reason you should know binary is:
 \subsection{Working with data formats}
-It is important to understand that everything in your computer is encoded in binary. Everything that is encoded in binary (movies, music, etc) is done so according to extremely specific requirements. I want you to understand a bit about how this works.
+It is important to understand that \emph{everything} in your computer is encoded in binary. Everything that is encoded in binary (movies, music, etc) is done so according to extremely specific requirements. I want you to understand a bit about how this works.
 
 In .bmp image files for example, you begin a file like this:
-<2 bytes> <4 bytes> ... and so on.
+\\\textless2 bytes\textgreater \textless4 bytes\textgreater ... and so on.
 
 The first set of 2 bytes identify the format of the BMP file (Windows, OS/2, etc) and the set of 4 bytes immediately following specify the size of the file in bytes.
 
@@ -102,7 +106,7 @@ Many format specifications you will encounter require knowledge of binary in ord
 The next reason you should know binary involves understanding something called ``flags". Flags are representations in binary of several true/false states of something. Lets say for example you are designing a game, and you need to keep track of the true/false state of eight weapons which may or may not be in your inventory.
 
 You can do this with a single byte! Eight bits. Each position can represent a given weapon. 1 = yes you have it, 0 = no you do not. So for example:
-0100 = (0 in the ``plasma cannon" place, 1 in the ``shotgun" place, 0 in the ``handgun" place, and 0 in the ``knife" place).
+\\0100 = (0 in the ``plasma cannon" place, 1 in the ``shotgun" place, 0 in the ``handgun" place, and 0 in the ``knife" place).
 
 Adding a weapon to inventory, for example adding a ``plasma cannon" would involve simply adding ``eight" (or 1000) to the existing value.
 
@@ -127,17 +131,17 @@ I find that a self taught programmer who has actually built stuff is a far bette
 \subsection{With so many jobs outsourced, how can I get paid a competitive salary?}
 If all you know is html, a little PHP, and how to make some basic web apps - then you are dead in the water on this one. There will always be some guy in a third world country willing to do the job cheaper.
 
-You must build skills that go above and beyond the basics, and establish yourself especially in areas that companies will not want to outsource. The more skilled you are, the more likely you can work with highly proprietary and sensitive information.
+You \emph{must} build skills that go above and beyond the basics, and establish yourself especially in areas that companies will not want to outsource. The more skilled you are, the more likely you can work with highly proprietary and sensitive information.
 
 No company wants to send their trade secrets to some third world country, and no company is going to let someone work on those types of projects who doesn't have a strong enforceable NDA in place. These are the positions that pay well and that give you the opportunity to grow.
-\section{More about counting like a computer}
-In lesson 3, we went over the basics of binary and I explained how a base-two system is different from a base-ten system. Please make sure you understand lesson 3 completely before beginning this lesson.
 
+\section{More about counting like a computer}
 First, lets review the most important principles about binary. You might say that binary is how a computer ``counts", but this is only a small piece of the story. Binary is the way a computer represents all numbers and data from simple counting to music files, to movies, etc.
 
 Now, when we show binary numbers, we will typically write the numbers with spaces after each four digits. For example, instead of writing: 01100011 we would write: 0110 0011
 
 Why is that? It simply makes it easier to read. Compare: 011111000001 to: 0111 1100 0001. Now we need to illustrate how to convert from binary to normal base-ten, and vice versa. Lets look at a table real quick:
+\begin{lstlisting}
 0000 : 0
 0001 : 1 (since there is a 1 in the ones place)
 0010 : 2 (since there is a 1 in the twos place)
@@ -148,37 +152,41 @@ Why is that? It simply makes it easier to read. Compare: 011111000001 to: 0111 1
 0111 : 7 (1 in four, 1 in two, 1 in one = 4+2+1 = 7)
 1000 : 8 (1 in eight's place)
 1001 : 9 (1 in eight, 1 in one = 8+1 = 9)
-
+\end{lstlisting}
 Now what? We have used all our available digits from zero to nine. In base ten, you do not have any other digits to use. Here we can continue counting past ten by using letters. A can be ten, B can be eleven, and so on. You will see why soon.
+\begin{lstlisting}
 1010 : A (1 in eight, 1 in two = 8+2 = 10)
 1011 : B (1 in eight, 1 in two, 1 in one = 8+2+1 = 11)
 1100 : C (1 in eight, 1 in four = 8+4 = 12)
 1101 : D (1 in eight, 1 in four, 1 in one = 8+4+1 = 13)
 1110 : E (1 in eight, 1 in four, 1 in two = 8+4+2 = 14)
 1111 : F (1 in eight, 1 in four, 1 in two, 1 in one = 8+4+2+1 = 15)
-
+\end{lstlisting}
 Examine only the column of this table containing the letters A through F. Now, if we were to stop here, what would be the next number? Lets go back to base ten for a moment, If we are at 9, what is the next number? The answer is ``10" which means that the first column becomes 0, and the column next to it becomes 1.
 
-So, if we count from 0 to F as above, what comes next? 10 -- except it doesnt' mean ten. It doesn't mean two either. How much is it? Well, look at our above sequence - we went: 13, 14, 15 -- what comes next? sixteen! It is a curious fact that ``10" (a one and a zero) means whatever base you are counting in. In base binary, 10 means two. In base ten, 10 means ten. In base sixteen, 10 means sixteen. And so on.
+So, if we count from 0 to F as above, what comes next? 10 -- except it doesn't mean ten. It doesn't mean two either. How much is it? Well, look at our above sequence - we went: 13, 14, 15 -- what comes next? sixteen! It is a curious fact that ``10" (a one and a zero) means whatever base you are counting in. In base binary, 10 means two. In base ten, 10 means ten. In base sixteen, 10 means sixteen. And so on.
 
 Therefore, in this new counting system with 0-9 and A-F, ``10" means sixteen. This counting system called ``base sixteen", or ``hexadecimal" is extremely useful because you can represent ANY binary sequence using hexadecimal.
 
 Lets keep counting so you can see that demonstrated:
+\begin{lstlisting}
 0000 1111 : F (1 in eight, 1 in four, 1 in two, 1 in one = 8+4+2+1 = 15)
 0001 0000 : 10 (not G, there is no such thing) (1 in sixteen's place)
-
-Look at the binary of this. If we go 1, 2, 4, 8, 16 - then you will see clearly there is a 1 in the sixteen's place. Also, you will notice from the the above table that 0001 corresponds to 1, and 0000 corresponds to 0. It turns out that you can ALWAYS represent four binary digits with exactly one hexadecimal digit.
+\end{lstlisting}
+Look at the binary of this. If we go 1, 2, 4, 8, 16 - then you will see clearly there is a 1 in the sixteen's place. Also, you will notice from the the above table that 0001 corresponds to 1, and 0000 corresponds to 0. It turns out that you can \emph{ALWAYS} represent four binary digits with exactly one hexadecimal digit.
 
 For example, 0110 1010 0011 - What is that in hexadecimal? Easy:
+\begin{lstlisting}
 0110 : six (6)
 1010 : ten (A)
 0011 : three (3)
-
+\end{lstlisting}
 Therefore, 0110 1010 0011 is: 6A3. It is that simple.
 
 Now lets do it the other way around. How can you convert 5F1 from hexadecimal to binary? Well, what is five? 0101. What is F? 1111. What is one? 0001.
 
 Therefore, 5F1 is: 0101 1111 0001
+
 \section{Include statements}
 There is certain functionality that is shared by all languages. Some of this functionality is critical to understand even before you write your first line of real code.
 
